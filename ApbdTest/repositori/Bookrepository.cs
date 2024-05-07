@@ -90,7 +90,19 @@ public class Bookrepository
         }
 
         return index;
-
-
     }
+
+    public void addcat(IConfiguration _configuration, int id,int idbook)
+    {
+        using SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("Default"));
+        connection.Open();
+        SqlCommand command = new SqlCommand();
+        command.Connection = connection;
+        command.CommandText = "INSERT INTO books_geners VALUES(@name,@i)";
+        command.Parameters.AddWithValue("@name", idbook);
+        command.Parameters.AddWithValue("@i", id);
+        command.ExecuteNonQuery();
+        
+    }
+    
 }
