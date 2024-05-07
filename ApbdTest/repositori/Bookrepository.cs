@@ -98,7 +98,7 @@ public class Bookrepository
         connection.Open();
         SqlCommand command = new SqlCommand();
         command.Connection = connection;
-        command.CommandText = "INSERT INTO books_geners VALUES(@name,@i)";
+        command.CommandText = "INSERT INTO books_genres VALUES(@name,@i)";
         command.Parameters.AddWithValue("@name", idbook);
         command.Parameters.AddWithValue("@i", id);
         command.ExecuteNonQuery();

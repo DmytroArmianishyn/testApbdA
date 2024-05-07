@@ -21,7 +21,7 @@ public class ApbdServise
         Console.WriteLine(id);
         var booknew= bookrepository.getinf(configuration, id);
         bookrepository.addcat(configuration,book.id[0],id);
-       // bookrepository.getgenre(configuration,id,booknew);
+        bookrepository.getgenre(configuration,id,booknew);
         return booknew;
     }
     
