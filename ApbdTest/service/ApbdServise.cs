@@ -14,9 +14,14 @@ public class ApbdServise
         return book;
     }
 
-    public void addBook(IConfiguration configuration, DtoAddBook book)
+    public DtoBookInf addBook(IConfiguration configuration, DtoAddBook book)
     {
         bookrepository.addBook(book.title,configuration);
-        
+        var id = bookrepository.id(book.title, configuration);
+        Console.WriteLine(id);
+        var booknew= bookrepository.getinf(configuration, id);
+        bookrepository.getgenre(configuration,id,booknew);
+        return booknew;
+
     }
 }

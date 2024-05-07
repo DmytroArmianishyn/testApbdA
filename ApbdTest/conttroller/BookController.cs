@@ -29,8 +29,8 @@ public class BookController:ControllerBase
     public IActionResult addBook(DtoAddBook addBook)
     {
 
-        _servise.addBook(_configuration, addBook);
-        return Ok(1);
+       var book= _servise.addBook(_configuration, addBook);
+        return Ok(book);
     }
     
 }
